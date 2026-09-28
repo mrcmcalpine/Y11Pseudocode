@@ -133,6 +133,100 @@
   ],
   "reflection": "Why would the loop not work if the internal loop was the external?"
 }
+
+  ,
+{
+  "id": "L05C05",
+  "level": 9,
+  "levelName": "ELITE FILE WRITER",
+  "title": "ELITE FILE WRITER",
+  "scenario": "Use the FUNCTION LENGTH(X) which returns an integer.\nInput text to an appropriate variable. Store this line of text in a file named Main.txt\nCalculate the length of the line of text and output the text in lower case along with its length. Store the lower case line of text in a text file called Lowercase.txt",
+  "fixed": [
+    "DECLARE Text : STRING",
+    "DECLARE TextLength : INTEGER"
+  ],
+  "blocks": [
+    {
+      "id": "b0",
+      "text": "OUTPUT \"Enter your text\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b1",
+      "text": "INPUT Text",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b2",
+      "text": "OPENFILE \"Main.txt\" FOR WRITE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b3",
+      "text": "WRITEFILE \"Main.txt\", Text",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b4",
+      "text": "CLOSEFILE \"Main.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b5",
+      "text": "TextLength ← LENGTH(Text)",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b6",
+      "text": "Text ← LCASE(Text)",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b7",
+      "text": "OUTPUT Text, TextLength",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b8",
+      "text": "OPENFILE \"Lowercase.txt\" FOR WRITE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b9",
+      "text": "WRITEFILE \"Lowercase.txt\", Text",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b10",
+      "text": "CLOSEFILE \"Lowercase.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d0",
+      "text": "OPENFILE \"Main.txt\" FOR READ",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d1",
+      "text": "OPENFILE \"lowercase.txt\" FOR WRITE",
+      "expectedIndent": 0
+    }
+  ],
+  "solution": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "b7",
+    "b8",
+    "b9",
+    "b10"
+  ],
+  "reflection": "how could you validate the string to ensure its between 10 and 20 characters"
+}
   
   
   
