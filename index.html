@@ -229,8 +229,144 @@
 }
   
   
-  
-  
+  ,
+{
+ "id": "L01C03",
+ "level": 1,
+ "levelName": "File Writing ZN",
+ "title": "Transfer a word",
+ "scenario": "Read the text from \"Book.txt\" and write it into \"Paper.txt\"",
+ "fixed": [
+   "DECLARE Word : INTEGER"
+ ],
+ "blocks": [
+   {
+     "id": "b0",
+     "text": "OPENFILE \"Book.txt\" FOR READ",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b1",
+     "text": "READFILE \"Book.txt\", Word",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b2",
+     "text": "CLOSEFILE \"Book.txt\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b3",
+     "text": "OPENFILE \"Paper.txt\" FOR WRITE",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b4",
+     "text": "WRITEFILE \"Paper.txt\", Word",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b5",
+     "text": "CLOSEFILE \"Paper.txt\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b6",
+     "text": "OUTPUT \"Transfer Completed\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d0",
+     "text": "WRITEFILE \"List.txt\", Number",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d1",
+     "text": "OUTPUT \"Word\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d2",
+     "text": "OPENFILE \"Paper.txt\" FOR READ",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d3",
+     "text": "OPENFILE \"Book.txt\" FOR WRITE",
+     "expectedIndent": 0
+   }
+ ],
+ "solution": [
+   "b0",
+   "b1",
+   "b2",
+   "b3",
+   "b4",
+   "b5",
+   "b6"
+ ],
+ "reflection": "When might this algorithm be useful?"
+}
+  ,
+{
+ "id": "L01C02 ZN",
+ "level": 1,
+ "levelName": "File Writing",
+ "title": "Read a number",
+ "scenario": "Read the number from Number.txt and extract it into the variable Number",
+ "fixed": [
+   "DECLARE Number : INTEGER"
+ ],
+ "blocks": [
+   {
+     "id": "b0",
+     "text": "OPENFILE \"Number.txt\" FOR READ",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b1",
+     "text": "READFILE \"Number.txt\", Number",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b2",
+     "text": "CLOSE FILE \"Number.txt\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b3",
+     "text": "OUTPUT \"The Number is \", Number",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d0",
+     "text": "WRITEFILE \"Number.txt\", Number",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d1",
+     "text": "OUTPUT \"Number\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d2",
+     "text": "OPENFILE \"Negative.txt\" FOR READ",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d3",
+     "text": "OPENFILE \"Number.txt\" FOR WRITE",
+     "expectedIndent": 0
+   }
+ ],
+ "solution": [
+   "b0",
+   "b1",
+   "b2",
+   "b3"
+ ],
+ "reflection": "What are the three parts of every file access we have to do?"
+}
   
   
   
