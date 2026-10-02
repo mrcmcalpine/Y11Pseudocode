@@ -367,6 +367,339 @@
  ],
  "reflection": "What are the three parts of every file access we have to do?"
 }
+
+  ,
+{
+  "id": "L01C05",
+  "level": 1,
+  "levelName": "Validation and Files",
+  "title": "Validate Text with a WHILE Loop",
+  "scenario": "Use a pre-condition loop to validate that the user enters some text. The text must contain between 5 and 20 characters. Output the validated text and write it to Validated.txt.",
+  "fixed": [
+    "DECLARE Text : STRING"
+  ],
+  "blocks": [
+    {
+      "id": "b5",
+      "text": "ENDWHILE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d0",
+      "text": "WHILE LENGTH(Text) >= 5 DO",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b8",
+      "text": "WRITEFILE \"Validated.txt\", Text",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b1",
+      "text": "INPUT Text",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b6",
+      "text": "OUTPUT Text",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b3",
+      "text": "OUTPUT \"Invalid. Enter between 5 and 20 characters\"",
+      "expectedIndent": 1
+    },
+    {
+      "id": "d1",
+      "text": "OPENFILE \"Validated.txt\" FOR READ",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b9",
+      "text": "CLOSEFILE \"Validated.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b0",
+      "text": "OUTPUT \"Enter text containing 5 to 20 characters\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b4",
+      "text": "INPUT Text",
+      "expectedIndent": 1
+    },
+    {
+      "id": "d2",
+      "text": "WHILE LENGTH(Text) < 5 AND LENGTH(Text) > 20 DO",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b2",
+      "text": "WHILE LENGTH(Text) < 5 OR LENGTH(Text) > 20 DO",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b7",
+      "text": "OPENFILE \"Validated.txt\" FOR WRITE",
+      "expectedIndent": 0
+    }
+  ],
+  "solution": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "b7",
+    "b8",
+    "b9"
+  ],
+  "reflection": "Why must the first INPUT statement appear before the WHILE loop begins?"
+},
+{
+  "id": "L01C06",
+  "level": 1,
+  "levelName": "Validation and Files",
+  "title": "Validate Text with a REPEAT Loop",
+  "scenario": "Use a post-condition loop to validate that the user enters some text. The text must contain between 5 and 20 characters. Output the validated text and write it to Validated.txt.",
+  "fixed": [
+    "DECLARE Text : STRING"
+  ],
+  "blocks": [
+    {
+      "id": "b7",
+      "text": "WRITEFILE \"Validated.txt\", Text",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b1",
+      "text": "OUTPUT \"Enter text containing 5 to 20 characters\"",
+      "expectedIndent": 1
+    },
+    {
+      "id": "d0",
+      "text": "UNTIL LENGTH(Text) < 5",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b4",
+      "text": "OUTPUT Text",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b0",
+      "text": "REPEAT",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d1",
+      "text": "OPENFILE \"Validated.txt\" FOR APPEND",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b8",
+      "text": "CLOSEFILE \"Validated.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b2",
+      "text": "INPUT Text",
+      "expectedIndent": 1
+    },
+    {
+      "id": "d2",
+      "text": "WHILE LENGTH(Text) >= 5 DO",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b6",
+      "text": "OPENFILE \"Validated.txt\" FOR WRITE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b3",
+      "text": "UNTIL LENGTH(Text) >= 5 AND LENGTH(Text) <= 20",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b5",
+      "text": "OUTPUT \"Text validated\"",
+      "expectedIndent": 0
+    }
+  ],
+  "solution": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "b7",
+    "b8"
+  ],
+  "reflection": "Why does a REPEAT...UNTIL loop not need an INPUT statement before the loop?"
+},
+{
+  "id": "L01C07",
+  "level": 1,
+  "levelName": "File Reading and Writing",
+  "title": "Rotate Three Files",
+  "scenario": "Files A.txt, B.txt and C.txt each contain one item of text. Move the original data from A.txt to B.txt, the original data from C.txt to A.txt, and the original data from B.txt to C.txt.",
+  "fixed": [
+    "DECLARE DataA : STRING",
+    "DECLARE DataB : STRING",
+    "DECLARE DataC : STRING"
+  ],
+  "blocks": [
+    {
+      "id": "b12",
+      "text": "WRITEFILE \"A.txt\", DataC",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b1",
+      "text": "READFILE \"A.txt\", DataA",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b14",
+      "text": "OPENFILE \"B.txt\" FOR WRITE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b8",
+      "text": "CLOSEFILE \"C.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d0",
+      "text": "WRITEFILE \"A.txt\", DataA",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b4",
+      "text": "READFILE \"B.txt\", DataB",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b17",
+      "text": "OPENFILE \"C.txt\" FOR WRITE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b2",
+      "text": "CLOSEFILE \"A.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b15",
+      "text": "WRITEFILE \"B.txt\", DataA",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d1",
+      "text": "OPENFILE \"B.txt\" FOR READ",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b10",
+      "text": "OUTPUT \"All original file data has been read\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b6",
+      "text": "OPENFILE \"C.txt\" FOR READ",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b18",
+      "text": "WRITEFILE \"C.txt\", DataB",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b0",
+      "text": "OPENFILE \"A.txt\" FOR READ",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d2",
+      "text": "WRITEFILE \"C.txt\", DataC",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b13",
+      "text": "CLOSEFILE \"A.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b5",
+      "text": "CLOSEFILE \"B.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b9",
+      "text": "OUTPUT \"Rotating file contents\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b16",
+      "text": "CLOSEFILE \"B.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b7",
+      "text": "READFILE \"C.txt\", DataC",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b19",
+      "text": "CLOSEFILE \"C.txt\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b3",
+      "text": "OPENFILE \"B.txt\" FOR READ",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d3",
+      "text": "OPENFILE \"A.txt\" FOR APPEND",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b11",
+      "text": "OPENFILE \"A.txt\" FOR WRITE",
+      "expectedIndent": 0
+    }
+  ],
+  "solution": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "b7",
+    "b8",
+    "b9",
+    "b10",
+    "b11",
+    "b12",
+    "b13",
+    "b14",
+    "b15",
+    "b16",
+    "b17",
+    "b18",
+    "b19"
+  ],
+  "reflection": "Why must all three original values be read into variables before any of the files are opened for writing?"
+}
   
   
   
