@@ -3,6 +3,68 @@
   
   
   [
+
+{
+  "id": "MCA1",
+  "level": 5,
+  "levelName": "INITIALISATION OF ARRAYS",
+  "title": "DECLARE AND INITIALISE 1D ARRAYS",
+  "scenario": "Initialise two arrays to store the name of students and if they have paid. All names should be assigned to an empty string and paid to FALSE",
+  "fixed": [
+    "DECLARE StudentName : ARRAY[1:75] OF STRING",
+    "DECLARE HasPaid : ARRAY[1:75] OF BOOLEAN"
+  ],
+  "blocks": [
+    {
+      "id": "b0",
+      "text": "FOR Index <- 1 TO 75",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b1",
+      "text": "StudentName[Index] <- \"\"",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b2",
+      "text": "HasPaid[Index] <- FALSE",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b3",
+      "text": "NEXT Index",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d0",
+      "text": "StudentName <- \"\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d1",
+      "text": "HasPaid[I] <- FALSE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d2",
+      "text": "HasPaid <- FALSE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d3",
+      "text": "FOR Index <- 0 TO 75",
+      "expectedIndent": 0
+    }
+  ],
+  "solution": [
+    "b0",
+    "b1",
+    "b2",
+    "b3"
+  ],
+  "reflection": "Why didn't you complain that Index was not declared?"
+}
+
   
   ]
 
