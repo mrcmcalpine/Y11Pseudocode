@@ -153,7 +153,90 @@
   ],
   "reflection": "How can you make your code more readable?"
 }
-  
+  ,
+{
+  "id": "MCA3",
+  "level": 5,
+  "levelName": "INITIALISATION OF ARRAYS",
+  "title": "DECLARE AND INITIALISE 1D ARRAYS - Post-CONDITION LOOP",
+  "scenario": "Initialise two arrays to store the name of students and if they have paid. All names should be assigned to an empty string and paid to FALSE",
+  "fixed": [
+    "DECLARE StudentName : ARRAY[0:74] OF STRING",
+    "DECLARE HasPaid : ARRAY[0:74] OF BOOLEAN",
+    "DECLARE Index : INTEGER"
+  ],
+  "blocks": [
+    {
+      "id": "b0",
+      "text": "Index <- 0",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b1",
+      "text": "REPEAT",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b2",
+      "text": "StudentName[Index] <- \"\"",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b3",
+      "text": "HasPaid[Index] <- FALSE",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b4",
+      "text": "Index <- Index + 1",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b5",
+      "text": "UNTIL Index > 74",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d0",
+      "text": "Index <- 1",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d1",
+      "text": "StudentName[Index] <- FALSE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d2",
+      "text": "HasPaid[Index] <- TRUE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d3",
+      "text": "Index <- Index - 1",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d4",
+      "text": "UNTIL Index = 74",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d5",
+      "text": "UNTIL Index < 74",
+      "expectedIndent": 0
+    }
+  ],
+  "solution": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5"
+  ],
+  "reflection": "What boundary tests are required here?"
+}
   ]
 
 
