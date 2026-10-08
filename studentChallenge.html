@@ -389,6 +389,107 @@
   ],
   "reflection": "why is the otherwise part here technically not required? Can it ever be executed?"
 }
+
+  ,
+{
+  "id": "MCA5",
+  "level": 4,
+  "levelName": "CASE STATEMENTS",
+  "title": "Favourite CS teacher",
+  "scenario": "INPUT a teachers name and use a case statement to output an appropriate message",
+  "fixed": [],
+  "blocks": [
+    {
+      "id": "b0",
+      "text": "DECLARE TeacherName : STRING",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b1",
+      "text": "OUTPUT \"Enter the surname of your favourite Computer Science teacher\"",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b2",
+      "text": "INPUT TeacherName",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b3",
+      "text": "TeacherName ← UCASE(TeacherName)",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b4",
+      "text": "CASE OF TeacherName",
+      "expectedIndent": 0
+    },
+    {
+      "id": "b5",
+      "text": "\"MCALPINE\" : OUTPUT \"Great choice\"",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b6",
+      "text": "\"MALLARY\" : OUTPUT \"Excellent choice\"",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b7",
+      "text": "\"WYND\" : OUTPUT \"Terrific choice\"",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b8",
+      "text": "OTHERWISE",
+      "expectedIndent": 1
+    },
+    {
+      "id": "b9",
+      "text": "OUTPUT \"You have selected some other teacher - poor choice\"",
+      "expectedIndent": 2
+    },
+    {
+      "id": "b10",
+      "text": "ENDCASE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d0",
+      "text": "ELSE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d1",
+      "text": "TeacherName[\"McAlpine\"]",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d2",
+      "text": "ENDWHILE",
+      "expectedIndent": 0
+    },
+    {
+      "id": "d3",
+      "text": "NEXT I",
+      "expectedIndent": 0
+    }
+  ],
+  "solution": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "b7",
+    "b8",
+    "b9",
+    "b10"
+  ],
+  "reflection": "why is the otherwise part here technically not required? Can it ever be executed?"
+}
   ]
 
 
