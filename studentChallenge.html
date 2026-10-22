@@ -490,6 +490,618 @@
   ],
   "reflection": "why is the otherwise part here technically not required? Can it ever be executed?"
 }
+
+  ,
+{
+ "id": "ZN01",
+ "level": 1,
+ "levelName": "Basic Algorithms",
+ "title": "Bubble Sort",
+ "scenario": "Bubble sort the array Scores",
+ "fixed": [
+   "DECLARE Scores:ARRAY[1:100] OF INTEGER",
+   "DECLARE NumUnsorted:INTEGER",
+   "DECLARE Swapped:BOOLEAN",
+   "DECLARE Temp:INTEGER",
+   "DECLARE I:INTEGER",
+   "DECLARE O:INTEGER",
+   "NumUnsorted ← 99",
+   "Swapped ← FALSE"
+ ],
+ "blocks": [
+   {
+     "id": "b0",
+     "text": "REPEAT",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b1",
+     "text": "FOR O ← 1 TO 99",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b2",
+     "text": "Swapped ← FALSE",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b3",
+     "text": "FOR I ← 1 TO NumUnsorted",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b4",
+     "text": "IF Scores[I] > Scores[I+1]",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b5",
+     "text": "THEN",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b6",
+     "text": "Temp ← Scores[I]",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b7",
+     "text": "Scores[I] ← Scores[I+1]",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b8",
+     "text": "Scores[I+1] ← Temp",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b9",
+     "text": "Swapped ← TRUE",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b10",
+     "text": "ENDIF",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b11",
+     "text": "NEXT I",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b12",
+     "text": "NumUnsorted ← NumUnsorted - 1",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b13",
+     "text": "NEXT O",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b14",
+     "text": "UNTIL NOT Swapped",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d0",
+     "text": "UNTIL Swapped",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d1",
+     "text": "Scores[I+1] ← Scores[I+1]",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d2",
+     "text": "Swapped ← 7",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d3",
+     "text": "FOR O ← 1 TO 9999",
+     "expectedIndent": 1
+   }
+ ],
+ "solution": [
+   "b0",
+   "b1",
+   "b2",
+   "b3",
+   "b4",
+   "b5",
+   "b6",
+   "b7",
+   "b8",
+   "b9",
+   "b10",
+   "b11",
+   "b12",
+   "b13",
+   "b14"
+ ],
+ "reflection": "Why is bubble sort useful?"
+}
+
+
+  ,
+{
+ "id": "ZN02",
+ "level": 1,
+ "levelName": "Basic Algorithms",
+ "title": "Counting",
+ "scenario": "Find what days of the 20 day array Temperatures where the temperature which under 10 degrees celsius. With a suitable output",
+ "fixed": [
+   "DECLARE Temperatures:ARRAY[1:7,1:20] OF INTEGER",
+   "DECLARE DaysUnder10:INTEGER",
+   "DaysUnder10 ← 0"
+ ],
+ "blocks": [
+   {
+     "id": "b0",
+     "text": "FOR I ← 1 TO 7",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b1",
+     "text": "FOR O ← 1 TO 20",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b2",
+     "text": "IF Temperatures[I,O] < 10",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b3",
+     "text": "THEN",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b4",
+     "text": "DaysUnder10 ← DaysUnder10 + 1",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b5",
+     "text": "ENDIF",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b6",
+     "text": "NEXT O",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b7",
+     "text": "NEXT I",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b8",
+     "text": "OUTPUT \"There were \", DaysUnder10, \" Days Under 10°C\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d0",
+     "text": "WHILE I = 7",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d1",
+     "text": "DECLARE Useless:STRING",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d2",
+     "text": "CASE OF Temperatures[I,O]",
+     "expectedIndent": 0
+   }
+ ],
+ "solution": [
+   "b0",
+   "b1",
+   "b2",
+   "b3",
+   "b4",
+   "b5",
+   "b6",
+   "b7",
+   "b8"
+ ],
+ "reflection": "How could we use this algorithm for other temperature thresholds?"
+}
+
+  ,
+{
+ "id": "ZN03",
+ "level": 1,
+ "levelName": "Basic Algorithms",
+ "title": "Find the minimum",
+ "scenario": "The array Heights stores the heights of 20 students in 10 separate classes, write an algorithm to find the minimum height in the array.",
+ "fixed": [
+   "DECLARE Heights:ARRAY[1:10,1:20] OF INTEGER",
+   "DECLARE Minimum:INTEGER"
+ ],
+ "blocks": [
+   {
+     "id": "b0",
+     "text": "Minimum ← 9999999",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b1",
+     "text": "FOR I ← 1 TO 10",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b2",
+     "text": "FOR O ← 1 TO 20",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b3",
+     "text": "IF Heights[I,O] < Minimum",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b4",
+     "text": "THEN",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b5",
+     "text": "Minimum ← Heights[I,O]",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b6",
+     "text": "ENDIF",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b7",
+     "text": "NEXT O",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b8",
+     "text": "NEXT I",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b9",
+     "text": "OUTPUT \"The shortest was\", Minimum, \" cm tall\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d0",
+     "text": "REPEAT",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d1",
+     "text": "UNTIL Minimum = 0",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d2",
+     "text": "OUTPUT Maximum",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d3",
+     "text": "OUTPUT Heights[I,O]",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d4",
+     "text": "Minimum ← -1",
+     "expectedIndent": 0
+   }
+ ],
+ "solution": [
+   "b0",
+   "b1",
+   "b2",
+   "b3",
+   "b4",
+   "b5",
+   "b6",
+   "b7",
+   "b8",
+   "b9"
+ ],
+ "reflection": "How could we change this to find the maximum?"
+}
+
+  ,
+{
+ "id": "ZN04",
+ "level": 1,
+ "levelName": "Basic Algorithms",
+ "title": "Find the maximum",
+ "scenario": "The array profits stores the profit of 3 products on when sold to 10 stores, write an algorithm to find the maximum profit you can make in the array.",
+ "fixed": [
+   "DECLARE Profit:ARRAY[1:3,1:10] OF INTEGER",
+   "DECLARE Maximum:INTEGER"
+ ],
+ "blocks": [
+   {
+     "id": "b0",
+     "text": "Maximum ← -1",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b1",
+     "text": "FOR I ← 1 TO 3",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b2",
+     "text": "FOR O ← 1 TO 10",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b3",
+     "text": "IF Profit[I,O] > Maximum",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b4",
+     "text": "THEN",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b5",
+     "text": "Maximum ← Profit[I,O]",
+     "expectedIndent": 3
+   },
+   {
+     "id": "b6",
+     "text": "ENDIF",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b7",
+     "text": "NEXT O",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b8",
+     "text": "NEXT I",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b9",
+     "text": "OUTPUT \"The most profitable was $\", Maximum",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d0",
+     "text": "REPEAT",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d1",
+     "text": "UNTIL Minimum = 0",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d2",
+     "text": "OUTPUT Maximum",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d3",
+     "text": "OUTPUT Heights[I,O]",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d4",
+     "text": "Minimum ← -1",
+     "expectedIndent": 0
+   }
+ ],
+ "solution": [
+   "b0",
+   "b1",
+   "b2",
+   "b3",
+   "b4",
+   "b5",
+   "b6",
+   "b7",
+   "b8",
+   "b9"
+ ],
+ "reflection": "How could we change this to find the minimum?"
+}
+  ,
+{
+ "id": "ZN05",
+ "level": 1,
+ "levelName": "Basic Algorithms",
+ "title": "Totalling",
+ "scenario": "The array Expenses stores the expenses over the first 3 months, your goal is to find the total expenses over the season",
+ "fixed": [
+   "DECLARE Expenses:ARRAY[1:3,1:10] OF INTEGER",
+   "DECLARE Total:INTEGER"
+ ],
+ "blocks": [
+   {
+     "id": "b0",
+     "text": "Total ← 0",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b1",
+     "text": "FOR I ← 1 TO 3",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b2",
+     "text": "FOR O ← 1 TO 10",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b3",
+     "text": "Total ← Total + Expenses[I,O]",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b4",
+     "text": "NEXT O",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b5",
+     "text": "NEXT I",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b6",
+     "text": "OUTPUT \"Total expenses this season was $\", Total",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d0",
+     "text": "Total ← 1",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d1",
+     "text": "FOR I ← 1 TO 10",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d2",
+     "text": "FOR O ← 1 TO 30",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d3",
+     "text": "NEXT Z",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d4",
+     "text": "OUTPUT \"I\"",
+     "expectedIndent": 0
+   }
+ ],
+ "solution": [
+   "b0",
+   "b1",
+   "b2",
+   "b3",
+   "b4",
+   "b5",
+   "b6"
+ ],
+ "reflection": "What can we add to find the average expense?"
+}
+
+  ,
+{
+ "id": "ZN06",
+ "level": 1,
+ "levelName": "Basic Algorithms",
+ "title": "Averaging",
+ "scenario": "The array scores stores the scores over the 3 classes, your goal is to find the average score overall rounded to two dp",
+ "fixed": [
+   "DECLARE Scores:ARRAY[1:3,1:10] OF INTEGER",
+   "DECLARE Total:INTEGER",
+   "DECLARE Average:REAL"
+ ],
+ "blocks": [
+   {
+     "id": "b0",
+     "text": "Total ← 0",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b1",
+     "text": "FOR I ← 1 TO 3",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b2",
+     "text": "FOR O ← 1 TO 10",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b3",
+     "text": "Total ← Total + Scores[I,O]",
+     "expectedIndent": 2
+   },
+   {
+     "id": "b4",
+     "text": "NEXT O",
+     "expectedIndent": 1
+   },
+   {
+     "id": "b5",
+     "text": "NEXT I",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b6",
+     "text": "Average ← ROUND(Total/30,2)",
+     "expectedIndent": 0
+   },
+   {
+     "id": "b7",
+     "text": "OUTPUT \"Average Scores across the 3 classes was \", Average",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d0",
+     "text": "Total ← 1",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d1",
+     "text": "FOR I ← 1 TO 10",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d2",
+     "text": "FOR O ← 1 TO 30",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d3",
+     "text": "NEXT Z",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d4",
+     "text": "OUTPUT \"I\"",
+     "expectedIndent": 0
+   },
+   {
+     "id": "d5",
+     "text": "Average ← Total/30",
+     "expectedIndent": 0
+   }
+ ],
+ "solution": [
+   "b0",
+   "b1",
+   "b2",
+   "b3",
+   "b4",
+   "b5",
+   "b6",
+   "b7"
+ ],
+ "reflection": "How could you change this algorithm to find the number of people who were above average?"
+}
+
+  
   ]
 
 
